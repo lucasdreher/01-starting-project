@@ -49,7 +49,11 @@ const AvailableMeals = () => {
 	let content = mealsList;
 
 	if (error) {
-		content = <button onClick={fetchMeals}>Try again</button>;
+		content = (
+			<button className={classes.button} onClick={fetchMeals}>
+				Try again
+			</button>
+		);
 	}
 
 	if (isLoading) {
