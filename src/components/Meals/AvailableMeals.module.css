@@ -23,6 +23,10 @@
 	}
 }
 
+.message {
+	text-align: center;
+}
+
 .button {
 	margin: 1rem auto;
 	cursor: pointer;

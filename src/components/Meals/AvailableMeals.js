@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import classes from './AvailableMeals.module.css';
 import Card from '../UI/Card';
@@ -50,14 +50,17 @@ const AvailableMeals = () => {
 
 	if (error) {
 		content = (
-			<button className={classes.button} onClick={fetchMeals}>
-				Try again
-			</button>
+			<React.Fragment>
+				<p className={classes.message}>{error}</p>
+				<button className={classes.button} onClick={fetchMeals}>
+					Try again
+				</button>
+			</React.Fragment>
 		);
 	}
 
 	if (isLoading) {
-		content = 'Loading tasks...';
+		content = <p className={classes.message}>Loading meals...</p>;
 	}
 
 	return (
